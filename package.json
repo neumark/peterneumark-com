@@ -1,0 +1,21 @@
+{
+  "name": "peterneumark.com",
+  "private": true,
+  "version": "0.0.0",
+  "main": "src/main.tsx",
+  "type": "module",
+  "description": "peterneumark.com: Peter Neumark's site, a Grove wiki served by immediately.run.",
+  "immediately.run": {
+    "$schema": "https://immediately.run/immediately-run-config.schema.json",
+    "content": [
+      "content"
+    ],
+    "render": "app"
+  },
+  "dependencies": {
+    "@immediately-run/grove": "0.2.7",
+    "@immediately-run/sdk": "^0.80.0",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5"
+  }
+}
