@@ -8,13 +8,21 @@ This repo holds content only. `content/immediately.run.json` marks `content/`
 as a wiki (`opensWith: open-wiki`), so immediately.run renders it with stock
 Grove. There is no app code and nothing to build.
 
-- **Write**: add or edit `.mdx` files under `content/`. `content/home.mdx` is
-  the front page; an entry tagged `writing` shows up in its feed; an entry
-  tagged `ui/nav` gets a top-nav item, ordered by `order`.
+- **Write**: add a post as `content/writing/<slug>.mdx` tagged `writing` (plus
+  its topic tags); it shows up in the front page's ledger and on the tags page.
+  `content/home.mdx` is the front page; an entry tagged `ui/nav` gets a top-nav
+  item, ordered by `order` (Writing · Tags · About).
+- **Look**: `content/_layout.mdx` is the shell (top nav, no sidebar, no footer);
+  `content/_style/site.mdx` is the content stylesheet the home entry declares
+  (token declarations only). The Source Serif 4 reading face sits in
+  `content/_style/fonts/` (OFL, license alongside), waiting on Grove accepting a
+  `fonts:` list from a corpus. Underscore-prefixed files are structure, never
+  pages.
 - **Safe rendering**: `render: safe` on `content/home.mdx` renders every entry
   through Grove's non-executable renderer. So: no `import`/`export` lines, no
-  `{…}` expressions, string-only component attributes, and only Grove's
-  built-in components (`Lede`, `Callout`, `DocList`, `Quote`, `TagCloud`, …).
+  `{…}` expressions (MDX comments included: `{/* … */}` renders as text), string-only
+  component attributes, and only Grove's built-in components (`Lede`, `Callout`,
+  `DocList`, `Quote`, `TagCloud`, …).
 - **Preview**: <https://immediately.run/present/github/neumark/peterneumark-com/main/files/content/home.mdx>.
 - **Engine**: the viewer is whatever Grove the platform binds to `open-wiki`
   (`immediately-run/grove@main`), so engine updates arrive without changes here.

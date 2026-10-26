@@ -1,0 +1,26 @@
+---
+title: The factory is the product.
+slug: the-factory-is-the-product
+layout: post
+date: 2026-10-13
+tags: [writing, software-factories]
+description: Most teams ship an application. A few ship the machine that ships applications.
+---
+
+Most teams ship an application. A few ship the machine that ships applications. The second
+group is quietly winning, and it has little to do with headcount.
+
+When a language model writes most of the code, the scarce skill moves one level up: deciding
+what gets built, verifying that it was, and keeping the loop short enough that nobody loses
+the thread. That loop is the factory. It has a floor plan, a shift schedule and a quality
+gate, even if nobody drew them.
+
+## What a floor plan looks like
+
+Start with the one thing every change passes through. In our case it is a single verify
+script. If it does not run there, it did not happen.
+
+<Quote>A build step you cannot see is a build step you cannot fix.</Quote>
+
+The rest of this post walks through the three gates we settled on and what each one caught
+in its first month.
